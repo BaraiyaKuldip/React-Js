@@ -62,3 +62,60 @@
 /* exercise 8 css start */
 
 /* exercise 8 css end */
+
+/* exercise 9 css start */
+
+
+
+        *
+        {
+            margin:  0px;
+            padding: 0px;
+        }
+        .navbar
+        {
+            position: fixed;
+            border: 1px solid black;
+            display: flex;  
+            background-color: #FFF600;
+            width: 100%;
+        }
+        .logo-img
+        {
+              /* align-items: center; 
+              padding-top: 4px;
+              padding-left: 15px; */
+        }
+        .navbar-items
+        {
+            justify-content: space-between;
+            
+            padding: 0px 10px 0px 0px;
+        }
+        .navbar-items>h1
+        {
+             color: #BF1B2C; 
+            padding:1px 450px 0px 0px;
+            font-size: 23px;
+            color: #321E1E;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+        }
+        .navbar-items>a
+        {
+            text-decoration: none;
+            color: #321E1E;
+            font-size: 20px;
+        }
+        .navbar-items>input
+        {
+            width: 225px;
+            margin-top: 0px;
+            padding: 3px;
+        }
+        .menuspace {
+          width: 100%;
+          height: 55.3px;
+        }
+
+/* exercise 9 css end */

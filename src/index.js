@@ -3,84 +3,76 @@ import ReactDOM from "react-dom/client";
 import './index.css';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-function NavbarComponent() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light text-bg-info">
-    <div className="container-fluid">
-      <a className="navbar-brand" href="#">
-        Navbar
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <a className="nav-link active" aria-current="page" href="#">
-            Home
-          </a>
-          <a className="nav-link" href="#">
-            Features
-          </a>
-          <a className="nav-link" href="#">
-            Pricing
-          </a>
+
+function NavbarComponent () {
+  return(
+<>
+    <nav>
+  <div className="navbar">
+    <div>
+      <img className="logo-img" src="/img/ex9-site-logo.png" alt="Logo" width="50px" />
+    </div>
+    <div className="navbar-items">
+      <h1>Taste Lab</h1>
+    </div>
+    <div className="navbar-items">
+      <a href="#">Home</a>
+    </div>
+    <div className="navbar-items">
+      <a href="#">Recipes</a>
+    </div>
+    <div className="navbar-items">
+      <a href="#">About</a>
+    </div>
+    <div className="navbar-items">
+      <a href="#">Contact</a>
+    </div>
+    <div className="navbar-items">
+      <input type="search" name="search" id="search" placeholder="Search" />
+    </div>
+  </div>
+</nav>
+
+<div class="menuspace"></div>
+</>
+);
+}
+
+function FoodComponent () {
+
+return(
+
+      <div className="col-3">
+        <div className="card">
+          <div className="card-header">
+          Veg Pulao
+          </div>
+          <div className="card-body">
+          <img src="/img/" alt="" />
+          </div>
+          <div className="card-footer">
+
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-  )
+
+);
 }
 
-function TourPackageCardComponent(props) {
-  return( 
-  <div className="col-6 mt-5">
-  <div className="card ">
-    <div className="card-header ">
-      <h3 className="fw-bold">{props.TourName}</h3>
-    </div>
-    <div className="card-body">
-      <img className="img-fluid rounded" src={props.TourPhoto}  alt="tour 1"></img>
-    </div>
-    <div className="card-footer">
-    <p> {props.TourDetail} </p>
-    </div>
-  </div>
-</div>
-)
-
-}
-
-function FinalComponent () {
- return (
-  <div className="container-fluid">
-    <div className="row">
-      {/* navbar start */}
+function FinalPageComponent () {
+  return(
+<>
 
   <NavbarComponent />
+  <div className="container mt-5">
+    <div className="row">
 
-{/* navbar end */}
+  <FoodComponent />
 
-{/* tour card start */}
-
-<TourPackageCardComponent TourName='Somnath Pilgrimage' TourPhoto='https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/4004/Somnath,%20Gujarat.jpg' TourDetail='Embark on a spiritual journey to Somnath , one of the most sacred Hindu pilgrimage sites, known for their ancient temples and religious significance '/>
-
-<TourPackageCardComponent TourName='Rann of Kutch Experience' TourPhoto='https://compassndiaries.files.wordpress.com/2022/02/dsc2339-01w.jpeg?w=1200' TourDetail='Witness the surreal beauty of the Rann of Kutch during the white desert festival, featuring folk dances, camel rides, and breathtaking views of the salt marshes'/>
-
-<TourPackageCardComponent TourName='Gir Wildlife Safari' TourPhoto='https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3793/Lion%20walking%20in%20Jungle%20of%20Gir%20National%20Park%20&%20Wildlife.jpg' TourDetail='Embark on an exciting safari adventure in Gir National Park, home to the majestic Asiatic lions, along with opportunities for birdwatching and nature walks'/>
-
-<TourPackageCardComponent TourName='Ahmedabad Heritage' TourPhoto='https://us.images.westend61.de/0001873745pw/jama-mosque-unesco-world-heritage-site-ahmedabad-gujarat-india-asia-RHPLF26630.jpg' TourDetail='Explore the cultural heritage of Ahmedabad with visits to Sabarmati Ashram, Jama Masjid, and the iconic Adalaj Stepwell, showcasing the city rich history '/>
-{/* tour card end */}
     </div>
-  </div>
- 
- )
-};
-root.render(<FinalComponent/>);
+</div>
+</>
+  );
+}
+
+root.render(<FinalPageComponent/>);

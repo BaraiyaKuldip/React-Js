@@ -47,7 +47,7 @@ function TourPackageCardComponent(props) {
       <h3 className="fw-bold">{props.TourName}</h3>
     </div>
     <div className="card-body">
-      <img className="img-fluid rounded" src={props.TourPhoto}  alt="tour 1"></img>
+      <img className="img-fluid rounded" src={props.TourPhoto}  alt="tour img"></img>
     </div>
     <div className="card-footer">
     <p> {props.TourDetail} </p>
@@ -62,7 +62,8 @@ function FinalComponent () {
  return (
   <div className="container-fluid">
     <div className="row">
-      {/* navbar start */}
+     <div className="col-12">
+       {/* navbar start */}
 
   <NavbarComponent />
 
@@ -78,6 +79,7 @@ function FinalComponent () {
 
 <TourPackageCardComponent TourName='Ahmedabad Heritage' TourPhoto='https://us.images.westend61.de/0001873745pw/jama-mosque-unesco-world-heritage-site-ahmedabad-gujarat-india-asia-RHPLF26630.jpg' TourDetail='Explore the cultural heritage of Ahmedabad with visits to Sabarmati Ashram, Jama Masjid, and the iconic Adalaj Stepwell, showcasing the city rich history '/>
 {/* tour card end */}
+     </div>
     </div>
   </div>
  
