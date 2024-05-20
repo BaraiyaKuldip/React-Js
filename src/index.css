@@ -118,4 +118,27 @@
           height: 55.3px;
         }
 
+
+        .card-body {
+          padding: 0;
+        }        
+        .card-footer {
+          background-color: #FFFFFF;
+          padding: 0;
+          
+        }
+        .hover-img img :hover 
+        {
+            transform: scale(1.9)
+        }
+        .btn-custom-size {
+          padding: 0px;
+          width: 40px;
+          height: 20px;
+        margin: 0px;
+          font-size: 12px;
+      }
+        
+    
+
 /* exercise 9 css end */
