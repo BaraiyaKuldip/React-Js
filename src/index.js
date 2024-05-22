@@ -3,97 +3,177 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-function NavbarComponent() {
-  return (
-    <>
-      <nav>
-        <div className="navbar">
-          <div>
-            <img
-              className="logo-img"
-              src="/img/ex9-site-logo.png"
-              alt="Logo"
-              width="50px"
-            />
-          </div>
-          <div className="navbar-items">
-            <h1>Taste Lab</h1>
-          </div>
-          <div className="navbar-items">
-            <a href="#">Home</a>
-          </div>
-          <div className="navbar-items">
-            <a href="#">Recipes</a>
-          </div>
-          <div className="navbar-items">
-            <a href="#">About</a>
-          </div>
-          <div className="navbar-items">
-            <a href="#">Contact</a>
-          </div>
-          <div className="navbar-items">
-            <input
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Search"
-            />
-          </div>
-        </div>
-      </nav>
+class ScoreCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.BatsmanName = props.BatsmanName;
 
-      <div class="menuspace"></div>
-    </>
-  );
+    this.state = {
+      DotBall: 0,
+      One: 0,
+      Two: 0,
+      Three: 0,
+      Four: 0,
+      Six: 0,
+      Runs: 0,
+      Balls: 0,
+      StrikeRate: 0,
+    };
+  }
+
+  UpadateDotBall=()=>{
+    this.setState({
+      DotBall:this.state.DotBall + 1
+    });
+  }
+
+  UpadateOne=()=>{
+    this.setState({
+      One:this.state.One + 1
+    });
+  }
+
+UpadateTwo=()=>{
+  this.setState({
+    Two:this.state.Two + 1
+  });
 }
 
-function FoodComponent() {
-  return (
-    <div className="col-3">
-      <div className="card border-0">
-        {/* <div className="card-header fw-bold" >
-          Veg Pulao
-          </div> */}
-        <div className="card-body">
-          <img
-            src="/img/ex9-veg-pulao.jpg"
-            className="card-img img-fluid hover-img"
-            alt=""
-          />
-        </div>
-        <div className="card-footer mt-1 border-0">
-          <div className="d-flex justify-content-between ">
-            <div className="fw-bold ">Veg Pulao</div>
-            <div className="btn btn-success rounded-3 fw-bold btn-custom-size">4.9 &#9733;</div>
-          </div>
-          <div className="d-flex justify-content-between">
-          <div> 
-            Shrijis Garden Restaurant
-          </div>
-          <div className="fw-semibold">
-            ₹ 289
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+UpadateThree=()=>{
+  this.setState({
+    Three:this.state.Three + 1
+  });
 }
 
-function FinalPageComponent() {
-  return (
-    <>
-      <NavbarComponent />
-      <div className="container mt-5">
-        <div className="row">
-          <FoodComponent />
-          <FoodComponent />
-          <FoodComponent />
-          <FoodComponent />
-        </div>
-      </div>
-    </>
-  );
+UpadateFour=()=> {
+  this.setState({
+    Four:this.state.Four + 1
+  });
 }
 
-root.render(<FinalPageComponent />);
+UpadateSix=()=>{
+  this.setState({
+    Six : this.state.Six + 1
+  });
+}
+
+  render() {
+    return (
+      <tbody>
+        <tr>
+          <th scope="row">
+            <div className="text-start">{this.BatsmanName}</div>
+          </th>
+          <td>
+            <div className="text-center">
+              <button onClick={this.UpadateDotBall} className="btn btn-dark">
+                Dot Ball<span className="badge ms-2 text-bg-success">{this.state.DotBall}</span>
+              </button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button onClick={this.UpadateOne} className="btn btn-dark">
+                One<span className="badge ms-2 text-bg-success">{this.state.One}</span>
+              </button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button onClick={this.UpadateTwo} className="btn btn-dark">
+                Two<span className="badge ms-2 text-bg-success">{this.state.Two}</span>
+              </button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button onClick={this.UpadateThree} className="btn btn-dark">
+                Three<span className="badge ms-2 text-bg-success">{this.state.Three}</span>
+              </button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button onClick={this.UpadateFour} className="btn btn-dark">
+                Four<span className="badge ms-2 text-bg-success">{this.state.Four}</span>
+              </button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button onClick={this.UpadateSix} className="btn btn-dark">
+                Six<span className="badge ms-2 text-bg-success">{this.state.Six}</span>
+              </button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button className="btn btn-dark">Runs</button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button className="btn btn-dark">Balls</button>
+            </div>
+          </td>
+          <td>
+            <div className="text-center">
+              <button className="btn btn-dark">Strike Rate</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    );
+  }
+}
+
+class FinalPage extends React.Component {
+  render() {
+    return (
+      <>
+        <div className="table-responsive">
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <div className="text-start">Batsman Name</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">0</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">1</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">2</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">3</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">4</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">6</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">Runs</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">Balls</div>
+                </th>
+                <th scope="col">
+                  <div className="text-center">Strike Rate</div>
+                </th>
+              </tr>
+            </thead>
+            <ScoreCard BatsmanName="Virat Kohli" />
+            <ScoreCard BatsmanName="Rohit Sharma" />
+            <ScoreCard BatsmanName="MS Dhoni" />
+          </table>
+        </div>
+      </>
+    );
+  }
+}
+root.render(<FinalPage />);
