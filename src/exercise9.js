@@ -15,9 +15,9 @@ class FoodComponent extends React.Component {
 
   }
   render(){
-    return(<div className="col-3">
+    return(<div className="col-3 mt-5">
     <div className="card border-0">
-      <div className="card-body">
+      <div className="card-body ">
         <img
           src={this.ItemPhoto}
           className="card-img img-fluid hover-img"
@@ -46,7 +46,7 @@ function NavbarComponent() {
   return (
     <>
       <nav>
-        <div className="navbar">
+        <div className="navbar sticky-top">
           <div>
             <img
               className="logo-img"
@@ -88,18 +88,27 @@ function NavbarComponent() {
 
 function FinalPageComponent() {
   return (
-    <>
+    <div className="div">
       <NavbarComponent />
-      <div className="container mt-5">
+      <div className="container">
         <div className="row">
           <FoodComponent ItemPhoto="/img/ex9-veg-pulao.jpg" ItemName="Veg Pulao" ItemRating="4.9" RestaurantName="Shrijis Garden Restaurant" ItemPrice="289" />
           <FoodComponent ItemPhoto="/img/ex9-dosa.jpg" ItemName="Masala Dosa" ItemRating="4.7" RestaurantName="New Malhar Dhosa" ItemPrice="80" />
           <FoodComponent ItemPhoto="/img/ex9-shahi-paneer.jpg" ItemName="Shahi Paneer" ItemRating="4.8" RestaurantName="Saffron" ItemPrice="325" />
-          
+          <FoodComponent ItemPhoto="/img/ex9-pizza.jpg" ItemName="Pizza" ItemRating="4.3" RestaurantName="La Pinoz Pizza" ItemPrice="249" />
+          <FoodComponent ItemPhoto="/img/ex9-mango-ice-cream.jpg" ItemName="Mangp Ice Cream" ItemRating="4.5" RestaurantName="Vadilal Hangout" ItemPrice="99" />
+          <FoodComponent ItemPhoto="/img/ex9-manchow-soup.jpg" ItemName="Manchow Soup" ItemRating="4.6" RestaurantName="Chinese Point" ItemPrice="110" />
+          <FoodComponent ItemPhoto="/img/ex9-veg-burger.jpg" ItemName="Veg Burger" ItemRating="4.1" RestaurantName="Domino's Pizza" ItemPrice="85" />
+          <FoodComponent ItemPhoto="/img/ex9-dal-makhani.jpg" ItemName="Dal Makhani" ItemRating="4.4" RestaurantName="Domino's Pizza" ItemPrice="165" />
+          <FoodComponent ItemPhoto="/img/ex9-cake-without-eggs.jpg" ItemName="Cake Without Eggs" ItemRating="4.7" RestaurantName="Shreeji Cake Shop" ItemPrice="450" />
+          <FoodComponent ItemPhoto="/img/ex9-chhole-masala.jpg" ItemName="Chole Masala" ItemRating="4.0" RestaurantName="Honest Waghawadi" ItemPrice="210" />
+          <FoodComponent ItemPhoto="/img/ex9-sandwich.jpg" ItemName="Veg Sandwich" ItemRating="4.7" RestaurantName="Tea Post" ItemPrice="79" />
+          <FoodComponent ItemPhoto="/img/ex9-pasta.jpg" ItemName="Veg Cheese Red Penne Pasta" ItemRating="3.8" RestaurantName="The Cafe Bistro" ItemPrice="139" />
+
         </div>
       </div>
-    </>
+    </div>
   );
 }
-
-root.render(<FinalPageComponent />);
+var output = (<FinalPageComponent/>);
+root.render(output);

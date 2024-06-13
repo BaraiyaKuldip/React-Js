@@ -1,179 +1,50 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class ScoreCard extends React.Component {
-  constructor(props) {
+class VoteForTree extends React.Component 
+{
+
+  constructor(props)
+  {
+
     super(props);
-    this.BatsmanName = props.BatsmanName;
 
-    this.state = {
-      DotBall: 0,
-      One: 0,
-      Two: 0,
-      Three: 0,
-      Four: 0,
-      Six: 0,
-      Runs: 0,
-      Balls: 0,
-      StrikeRate: 0,
-    };
+
+
+
   }
 
-  UpadateDotBall=()=>{
-    this.setState({
-      DotBall:this.state.DotBall + 1
-    });
-  }
-
-  UpadateOne=()=>{
-    this.setState({
-      One:this.state.One + 1
-    });
-  }
-
-UpadateTwo=()=>{
-  this.setState({
-    Two:this.state.Two + 1
-  });
-}
-
-UpadateThree=()=>{
-  this.setState({
-    Three:this.state.Three + 1
-  });
-}
-
-UpadateFour=()=> {
-  this.setState({
-    Four:this.state.Four + 1
-  });
-}
-
-UpadateSix=()=>{
-  this.setState({
-    Six : this.state.Six + 1
-  });
-}
-
-  render() {
-    return (
-      <tbody>
-        <tr>
-          <th scope="row">
-            <div className="text-start">{this.BatsmanName}</div>
-          </th>
-          <td>
-            <div className="text-center">
-              <button onClick={this.UpadateDotBall} className="btn btn-dark">
-                Dot Ball<span className="badge ms-2 text-bg-success">{this.state.DotBall}</span>
-              </button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button onClick={this.UpadateOne} className="btn btn-dark">
-                One<span className="badge ms-2 text-bg-success">{this.state.One}</span>
-              </button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button onClick={this.UpadateTwo} className="btn btn-dark">
-                Two<span className="badge ms-2 text-bg-success">{this.state.Two}</span>
-              </button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button onClick={this.UpadateThree} className="btn btn-dark">
-                Three<span className="badge ms-2 text-bg-success">{this.state.Three}</span>
-              </button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button onClick={this.UpadateFour} className="btn btn-dark">
-                Four<span className="badge ms-2 text-bg-success">{this.state.Four}</span>
-              </button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button onClick={this.UpadateSix} className="btn btn-dark">
-                Six<span className="badge ms-2 text-bg-success">{this.state.Six}</span>
-              </button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button className="btn btn-dark">Runs</button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button className="btn btn-dark">Balls</button>
-            </div>
-          </td>
-          <td>
-            <div className="text-center">
-              <button className="btn btn-dark">Strike Rate</button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    );
-  }
-}
-
-class FinalPage extends React.Component {
-  render() {
-    return (
+  render(){
+    return(
       <>
-        <div className="table-responsive">
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">
-                  <div className="text-start">Batsman Name</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">0</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">1</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">2</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">3</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">4</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">6</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">Runs</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">Balls</div>
-                </th>
-                <th scope="col">
-                  <div className="text-center">Strike Rate</div>
-                </th>
-              </tr>
-            </thead>
-            <ScoreCard BatsmanName="Virat Kohli" />
-            <ScoreCard BatsmanName="Rohit Sharma" />
-            <ScoreCard BatsmanName="MS Dhoni" />
-          </table>
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-6">
+            <div className="card">
+              <div className="card-header">
+              <p>
+                <h5>શું તમે માનો છો કે દરેક વ્યક્તિ એ એક વૃક્ષ ઉછેરવું જોઈએ ?</h5>
+              </p>
+              </div>
+              <div className="card-body">
+              <img src="img/save-tree.jpg" className='img-fluid' alt="Save Tree IMG" />
+              </div>
+              <div className="card-footer">
+                <span className='d-flex justify-content-between'>
+                  <button type='button' className='btn'>હા 👍</button>
+                  <button type='button' className='btn'>ના 👎</button>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
       </>
     );
   }
+
 }
-root.render(<FinalPage />);
+
+root.render(<VoteForTree/>);
